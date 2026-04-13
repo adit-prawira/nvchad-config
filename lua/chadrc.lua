@@ -6,45 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "ashes",
-  hl_override = {
-    Normal = { bg = "#000000" },
-    NormalNC = { bg = "#000000" },
-    NormalFloat = { bg = "#000000" },
-    SignColumn = { bg = "#000000" },
-    LineNr = { bg = "#000000" },
-    CursorLineNr = { bg = "#000000" },
-    StatusLine = { bg = "#000000" },
-    EndOfBuffer = { bg = "#000000" },
-
-    -- subtle borders (light grey)
-    WinSeparator = { fg = "#555555", bg = "#000000" },
-    VertSplit = { fg = "#555555", bg = "#000000" },
-    NvimTreeWinSeparator = { fg = "#555555", bg = "#000000" },
-    TelescopeBorder = { fg = "#555555", bg = "#000000" },
-    FloatBorder = { fg = "#555555", bg = "#000000" }, 
-  }, 
-  changed_themes = {
-    aquarium = {
-      base_30 = {
-        black = "#000000",
-        darker_black = "#000000",
-        one_bg = "#000000",
-        one_bg2 = "#000000",
-        one_bg3 = "#000000",
-      },
-    },
-    ashes = {
-      base_30 = {
-        black = "#000000",
-        darker_black = "#000000",
-        one_bg = "#000000",
-        one_bg2 = "#000000",
-        one_bg3 = "#000000",
-      },
-    },
-
-  }, 
+	theme = "ashes", 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
