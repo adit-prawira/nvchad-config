@@ -7,6 +7,11 @@ local servers = {
   html = {},
   cssls = {},
   pyright = {},
+  marksman = {
+      cmd = { "marksman", "server" },
+      filetypes = { "markdown" },
+      root_dir = lspconfig.util.root_pattern(".git", ".marksman.toml"),
+  },
   vtsls = {
     root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
   },
@@ -69,7 +74,10 @@ local servers = {
     },
   },
   jdtls = {
-    cmd = { "jdtls" },
+    cmd = {
+      "jdtls",
+      "--jvm-arg=-javaagent:/Users/adityaprawira/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+    },
     root_dir = lspconfig.util.root_pattern("pom.xml", "build.gradle", ".git"),
     settings = {
       java = {

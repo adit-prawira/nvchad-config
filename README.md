@@ -1,6 +1,7 @@
 # 🚀 nvchad-config
 
-My personal [NvChad](https://github.com/NvChad/NvChad) configuration for Neovim — built for a fast, minimal, and productive development environment across multiple languages.
+My personal [NvChad](https://github.com/NvChad/NvChad) configuration for Neovim — built for a fast, minimal, and productive development environment across multiple
+languages.
 
 ## 📋 Requirements
 
@@ -25,6 +26,12 @@ git clone https://github.com/adit-prawira/nvchad-config ~/.config/nvim
 nvim
 ```
 
+After launching, install Treesitter parsers for markdown:
+
+```
+:TSInstall markdown markdown_inline
+```
+
 ## 🔌 Plugins
 
 | Plugin | Purpose |
@@ -34,6 +41,7 @@ nvim
 | `nvim-telescope/telescope.nvim` | Fuzzy finder |
 | `nvim-telescope/telescope-fzf-native.nvim` | Faster telescope sorting |
 | `mg979/vim-visual-multi` | Multiple cursors (VSCode Cmd+D style) |
+| `MeanderingProgrammer/render-markdown.nvim` | Inline markdown rendering |
 
 ## 🌐 Language Support
 
@@ -45,10 +53,11 @@ LSP, formatting, and syntax highlighting configured for:
 - **Python** — `pyright`
 - **HTML / CSS** — `html`, `cssls`
 - **C / C++** — `clangd`
-- **Java** — `jdtls`
+- **Java** — `jdtls` with Lombok agent
 - **C#** — `omnisharp`
 - **YAML** — `yamlls` with GitHub Actions, Docker Compose, Kustomize schemas
 - **Nginx** — `nginx-language-server`
+- **Markdown** — `marksman`
 - **Lua** — `lua_ls` (built into NvChad)
 
 ## ⌨️ Key Mappings
@@ -106,6 +115,7 @@ LSP, formatting, and syntax highlighting configured for:
 | `Leader+wa` | Add workspace folder |
 | `Leader+wr` | Remove workspace folder |
 | `Leader+wl` | List workspace folders |
+| `Leader+fs` | Code actions (fill struct, quick fixes) |
 
 ### Word Navigation
 | Keymap | Action |
@@ -121,13 +131,13 @@ LSP, formatting, and syntax highlighting configured for:
 ├── lazy-lock.json            # locked plugin versions
 ├── .stylua.toml              # lua formatter config
 └── lua/
-    ├── configs/
-    │   ├── lspconfig.lua     # LSP server configurations
-    │   └── conform.lua       # formatter configurations
-    ├── plugins/
-    │   └── init.lua          # plugin declarations
-    ├── mappings.lua          # all keymaps
-    └── options.lua           # neovim options
+  ├── configs/
+  │   ├── lspconfig.lua     # LSP server configurations
+  │   └── conform.lua       # formatter configurations
+  ├── plugins/
+  │   └── init.lua          # plugin declarations
+  ├── mappings.lua          # all keymaps
+  └── options.lua           # neovim options
 ```
 
 ## 📝 Notes
@@ -135,3 +145,4 @@ LSP, formatting, and syntax highlighting configured for:
 - This config uses NvChad as a plugin — see [NvChad docs](https://nvchad.com/docs/quickstart/install) for more info
 - LSP servers are managed via [Mason](https://github.com/williamboman/mason.nvim) — run `:Mason` to install/manage servers
 - Formatters are managed via `conform.nvim` — run `:ConformInfo` to check formatter status
+- Markdown files render inline automatically — toggle with `:RenderMarkdown toggle`

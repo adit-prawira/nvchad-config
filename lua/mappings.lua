@@ -29,7 +29,9 @@ vim.keymap.set("n", "<space>fg", function()
 end, {desc = "Global Search"})
 
 vim.keymap.set("n", "<space>fr", require("telescope.builtin").find_files, {desc = "Find File With Preview"})
-
+vim.keymap.set("n", "<leader>fs", function()
+    vim.lsp.buf.code_action()
+end, { desc = "Fill struct / code actions" })
 vim.keymap.set("n", "<space>ef", function()
   require("telescope.builtin").find_files {
     cwd = vim.fn.stdpath("config")

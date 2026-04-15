@@ -27,5 +27,37 @@ return {
   {
     "mg979/vim-visual-multi",
     lazy = false,
+  },
+  {
+      "MeanderingProgrammer/render-markdown.nvim",
+      lazy = false,
+      dependencies = {
+          "nvim-treesitter/nvim-treesitter",
+          "nvim-tree/nvim-web-devicons",
+      },
+      opts = {
+          heading = {
+              enabled = true,
+              sign = true,
+              icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+          },
+          checkbox = {
+              enabled = true,
+              unchecked = { icon = "󰄱 " },
+              checked   = { icon = "󰱒 " },
+          },
+          bullet = {
+              enabled = true,
+              icons = { "●", "○", "◆", "◇" },
+          },
+          code = {
+              enabled = true,
+              style = "full",
+          },
+          table = {
+              enabled = true,
+              style = "full",
+          },
+      },
   }
 }
