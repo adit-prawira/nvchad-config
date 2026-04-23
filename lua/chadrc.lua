@@ -6,7 +6,16 @@
 local M = {}
 
 M.base46 = {
-	theme = "catppuccin",
+	theme = "ashes",
+	hl_override = {
+		Normal = { bg = "#000000" },
+		NormalNC = { bg = "#000000" },
+		NormalFloat = { bg = "#000000" },
+		["NeoTreeNormal"] = { bg = "#000000" },
+		["NeoTreeNormalNC"] = { bg = "#000000" },
+		["NvimTreeNormal"] = { bg = "#000000" },
+		["NvimTreeNormalNC"] = { bg = "#000000" },
+	},
 }
 
 return M
