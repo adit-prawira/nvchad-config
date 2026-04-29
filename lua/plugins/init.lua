@@ -27,6 +27,13 @@ return {
   {
     "mg979/vim-visual-multi",
     lazy = false,
+    init = function()
+      -- Configure VM before plugin loads to avoid C-n conflict with nvim-tree
+      vim.g.VM_maps = {
+        ["Find Under"] = "<C-d>",           -- Use C-d instead of default C-n
+        ["Find Subword Under"] = "<C-d>",
+      }
+    end,
   },
   {
       "MeanderingProgrammer/render-markdown.nvim",

@@ -1,15 +1,6 @@
 require "nvchad.mappings"
 
 -- add yours here
--- at the top of mappings.lua, before anything else
-vim.g.VM_default_mappings = 0
-vim.g.VM_maps = {
-    ["Find Under"] = "<C-d>",
-    ["Find Subword Under"] = "<C-d>",
-    ["Start Regex Search"] = "",   -- disable
-    ["Add Cursor Down"] = "",      -- disable
-    ["Add Cursor Up"] = "",        -- disable
-}
 
 vim.keymap.set("n", ";", ":", { desc = "CMD enter command mode" })
 vim.keymap.set("i", "jk", "<ESC>")
