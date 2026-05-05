@@ -74,3 +74,15 @@ end, {desc = "Terminal toggle vertical"})
 vim.keymap.set("n", "<C-d>", "<Plug>(VM-Find-Under)", { desc = "Add cursor on word" })
 vim.keymap.set("v", "<C-d>", "<Plug>(VM-Find-Subword-Under)", { desc = "Add cursor on selection" })
 
+-- Resize splits with Ctrl+Shift+arrows
+vim.keymap.set("n", "<C-S-Up>", "<C-w>+", { desc = "Expand split height" })
+vim.keymap.set("n", "<C-S-Down>", "<C-w>-", { desc = "Shrink split height" })
+vim.keymap.set("n", "<C-S-Left>", function()
+  local win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_set_width(win, vim.api.nvim_win_get_width(win) - 2)
+end, { desc = "Shrink split width" })
+vim.keymap.set("n", "<C-S-Right>", function()
+  local win = vim.api.nvim_get_current_win()
+  vim.api.nvim_win_set_width(win, vim.api.nvim_win_get_width(win) + 2)
+end, { desc = "Expand split width" })
+
