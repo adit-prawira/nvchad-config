@@ -7,7 +7,6 @@ vim.keymap.set("i", "jk", "<ESC>")
 -- Search Operations Keymaps
 vim.keymap.set("n", "<space>ff", function()
   require("telescope.builtin").find_files({
-    previewer = false,
     hidden = true,
   })
 end, {desc = "Quick File Access"})
@@ -86,7 +85,14 @@ vim.keymap.set("n", "<space>tb", function()
     { "Tokyo Night  #1a1b26",    "#1a1b26" },
     { "Gruvbox dark #282828",    "#282828" },
     { "Slate        #222436",    "#222436" },
-    { "Custom hex…",             "custom"  },
+    { "Ubuntu       #2c001e",    "#2c001e" },
+    { "Monokai Pro        #2d2a2e",    "#2d2a2e" },
+    { "Monokai Classic    #272822",    "#272822" },
+    { "Monokai Octagon    #282a3a",    "#282a3a" },
+    { "Monokai Machine    #273136",    "#273136" },
+    { "Monokai Ristretto  #2c2525",    "#2c2525" },
+    { "Monokai Spectrum   #222222",    "#222222" },
+    { "Custom hex…",                   "custom"  },
   }
 
   vim.ui.select(vim.tbl_map(function(p) return p[1] end, presets), { prompt = "Background color" }, function(_, idx)
