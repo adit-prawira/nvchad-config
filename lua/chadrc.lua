@@ -24,7 +24,7 @@ if saved_bg and saved_bg:match "^#%x%x%x%x%x%x$" then
 end
 
 M.base46 = {
-  theme = "catppuccin",
+  theme = "everforest",
   hl_override = hl_override,
 }
 
