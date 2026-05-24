@@ -74,6 +74,40 @@ end, {desc = "Terminal toggle vertical"})
 vim.keymap.set("n", "<C-d>", "<Plug>(VM-Find-Under)", { desc = "Add cursor on word" })
 vim.keymap.set("v", "<C-d>", "<Plug>(VM-Find-Subword-Under)", { desc = "Add cursor on selection" })
 
+-- Background color picker — only patches bg highlight groups, theme syntax colors stay intact
+vim.keymap.set("n", "<space>tb", function()
+  local bg = require "configs.bg"
+
+  local presets = {
+    { "Reset (theme default)",   nil       },
+    { "Pure black   #000000",    "#000000" },
+    { "Near black   #0d0d0d",    "#0d0d0d" },
+    { "Catppuccin   #1e1e2e",    "#1e1e2e" },
+    { "Tokyo Night  #1a1b26",    "#1a1b26" },
+    { "Gruvbox dark #282828",    "#282828" },
+    { "Slate        #222436",    "#222436" },
+    { "Custom hex…",             "custom"  },
+  }
+
+  vim.ui.select(vim.tbl_map(function(p) return p[1] end, presets), { prompt = "Background color" }, function(_, idx)
+    if not idx then return end
+    local value = presets[idx][2]
+    if value == nil then
+      bg.reset()
+    elseif value == "custom" then
+      vim.ui.input({ prompt = "Hex (#rrggbb): " }, function(input)
+        if input and input:match "^#%x%x%x%x%x%x$" then
+          bg.apply(input)
+        else
+          vim.notify("Invalid hex color", vim.log.levels.WARN)
+        end
+      end)
+    else
+      bg.apply(value)
+    end
+  end)
+end, { desc = "Set background color" })
+
 -- Resize splits with Ctrl+Shift+arrows
 vim.keymap.set("n", "<C-S-Up>", "<C-w>+", { desc = "Expand split height" })
 vim.keymap.set("n", "<C-S-Down>", "<C-w>-", { desc = "Shrink split height" })

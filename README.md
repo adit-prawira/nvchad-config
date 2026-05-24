@@ -70,6 +70,12 @@ LSP, formatting, and syntax highlighting configured for:
 | `Ctrl+s` | Save file |
 | `Space+a` | Select all |
 
+### Theme & Appearance
+| Keymap | Action |
+|---|---|
+| `Space+ft` | Select theme |
+| `Space+tb` | Set background color (persists across restarts) |
+
 ### File Search (Telescope)
 | Keymap | Action |
 |---|---|
@@ -77,7 +83,6 @@ LSP, formatting, and syntax highlighting configured for:
 | `Space+fr` | Find files (with preview) |
 | `Space+fg` | Live grep (global search) |
 | `Space+fi` | Search in current buffer |
-| `Space+ft` | Select theme |
 | `Space+ef` | Find Neovim config files |
 
 ### Code Editing
@@ -133,7 +138,8 @@ LSP, formatting, and syntax highlighting configured for:
 └── lua/
   ├── configs/
   │   ├── lspconfig.lua     # LSP server configurations
-  │   └── conform.lua       # formatter configurations
+  │   ├── conform.lua       # formatter configurations
+  │   └── bg.lua            # background color persistence
   ├── plugins/
   │   └── init.lua          # plugin declarations
   ├── mappings.lua          # all keymaps
