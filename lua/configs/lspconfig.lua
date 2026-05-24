@@ -47,10 +47,15 @@ local servers = {
     cmd = { "rust-analyzer" },
     filetypes = { "rust" },
     root_dir = lspconfig.util.root_pattern("Cargo.toml", ".git"),
+    on_attach = function(client, bufnr)
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+      nvlsp.on_attach(client, bufnr)
+    end,
     settings = {
       ["rust-analyzer"] = {
         cargo = { allFeatures = true },
-        checkOnSave = { command = "clippy" },
+        check = { command = "clippy" },
         assist = {
           importGranularity = "module",
           importPrefix = "by_self",
