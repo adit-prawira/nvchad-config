@@ -18,6 +18,7 @@ if saved_bg and saved_bg:match "^#%x%x%x%x%x%x$" then
     "Normal", "NormalNC", "NormalFloat", "SignColumn", "LineNr", "CursorLineNr", "EndOfBuffer",
     "NvimTreeNormal", "NvimTreeNormalNC", "NvimTreeEndOfBuffer", "NvimTreeWinSeparator",
     "Tabline", "TbFill", "TbBufOff", "TbBufOffModified", "TbBufOffClose", "TbTabOff",
+    "TelescopeNormal", "TelescopeBorder", "TelescopePromptBorder",
   } do
     hl_override[group] = { bg = saved_bg }
   end
